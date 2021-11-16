@@ -1,0 +1,43 @@
+{% extends 'notebook/base.html' %}
+{% block title %}Contact list{% endblock %}
+{% block content %}
+    <div class="container">
+        <h2>Contact list</h2>
+        <div class="row">
+            <div class="col-md-2">
+                <p>If you will add new contact</p>
+            </div>
+            <div class="col-md-2">
+                <a href="#" class="btn btn-primary" role="button">Add contact</a>
+            </div>
+        </div>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th></th>
+                <th>E-mail</th>
+                <th>Phone_number</th>
+                <th>Created</th>
+                <th>Modified</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for item in  contacts %}
+                <tr>
+                    <td>{{ item.first_name }}</td>
+                    <td>{{ item.last_name }}</td>
+                    <td><a href="#" class="btn btn-info" role="button">edit</a>
+                    </td>
+                    <td>{{ item.e_mail }}</td>
+                    <td>{{ item.phone_number }}</td>
+                    <td>{{ item.created }}</td>
+                    <td>{{ item.modified }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% include "notebook/pagination.html" with page=page_obj %}
+    </div>
+{% endblock %}
