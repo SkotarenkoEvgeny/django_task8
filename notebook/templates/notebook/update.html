@@ -9,16 +9,48 @@
     {% endif %}
 {% endblock status_message %}
 {% block content %}
-{#    <form action="{% url 'notebook:contact_edit' object.id %}" method="post"#}
-{#          enctype="multipart/form-data">#}
-{#        {% csrf_token %}#}
-{#        {{ form.as_p }}#}
-{#        {{ form.instance.created|date:"Y/m/d H:i:s" }}#}
-{#        <input type="submit" value="Save" name="add_button"#}
-{#               class="btn btn-primary"/>#}
-{#        <button type="submit" name="cancel_button" value="Cancel"#}
-{#                class="btn btn-link">Cancel#}
-{#        </button>#}
-{#    </form>#}
+
+    <div class="edit-form">
+    <h3>Edit contact ID-{{ contact.id }}</h3>
+    <form action="{% url 'notebook:contact_edit' contact.id %}" method="post"
+          enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="first_name">First name:</label>
+            <input type="text" class="form-control" name="first_name"
+                   id="first_name" value={{ contact.first_name}}>
+        </div>
+        <div class="form-group">
+            <label for="last_name">Last name:</label>
+            <input type="text" class="form-control" name="last_name"
+                   id="last_name" value=
+                    {{ contact.last_name }}>
+        </div>
+        <div class="form-group">
+            <label for="e_mail">E-mail:</label>
+            <input type="email" class="form-control" name="e_mail" id="e_mail"
+                   value=
+                    {{ contact.e_mail }}>
+        </div>
+        <div class="form-group">
+            <label for="phone_number">Phone_number:</label>
+            <input type="tel" class="form-control" name="phone_number"
+                   id="phone_number"
+                   value={{ contact.phone_number }}>
+        </div>
+        <div class="form-group">
+            <label for="created">Created:</label>
+            <input type="text" class="form-control" id="created" value=
+                    {{ contact.created_1 }} readonly>
+        </div>
+        <div class="form-group">
+            <label for="modified">Modified:</label>
+            <input type="text" class="form-control" id="modified" value=
+                    {{ contact.modified }} readonly>
+        </div>
+        <button type="submit" class="btn btn-primary" name="add_button">Submit</button>
+
+    </form>
+    </div>
 
 {% endblock content %}
