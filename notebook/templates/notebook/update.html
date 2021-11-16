@@ -1,0 +1,24 @@
+{% extends 'notebook/base.html' %}
+{% load static %}
+{% block title %}Contact edit{% endblock title %}
+{% block status_message %}
+    {% if form.errors %}
+        <div class="alert alert-warning" role="alert">Please, fix the below
+            shows errors
+        </div>
+    {% endif %}
+{% endblock status_message %}
+{% block content %}
+{#    <form action="{% url 'notebook:contact_edit' object.id %}" method="post"#}
+{#          enctype="multipart/form-data">#}
+{#        {% csrf_token %}#}
+{#        {{ form.as_p }}#}
+{#        {{ form.instance.created|date:"Y/m/d H:i:s" }}#}
+{#        <input type="submit" value="Save" name="add_button"#}
+{#               class="btn btn-primary"/>#}
+{#        <button type="submit" name="cancel_button" value="Cancel"#}
+{#                class="btn btn-link">Cancel#}
+{#        </button>#}
+{#    </form>#}
+
+{% endblock content %}

@@ -1,4 +1,5 @@
 {% extends 'notebook/base.html' %}
+{% load static %}
 {% block title %}Contact list{% endblock %}
 {% block content %}
     <div class="container">
@@ -28,7 +29,9 @@
                 <tr>
                     <td>{{ item.first_name }}</td>
                     <td>{{ item.last_name }}</td>
-                    <td><a href="#" class="btn btn-info" role="button">edit</a>
+                    <td><a href='{% url "notebook:contact_edit" item.id %}'
+                           class="btn
+                    btn-info" role="button">edit</a>
                     </td>
                     <td>{{ item.e_mail }}</td>
                     <td>{{ item.phone_number }}</td>
