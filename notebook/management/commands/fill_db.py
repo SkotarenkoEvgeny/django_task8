@@ -8,7 +8,7 @@ class Command(BaseCommand):
     help = 'add 100 random users'
 
     def handle(self, *args, **options):
-        user_list = RandomUser.generate_users(40)
+        user_list = RandomUser.generate_users(100)
         for item in user_list:
             contact = Contact(
                 first_name=item.get_first_name(),
