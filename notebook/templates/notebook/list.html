@@ -9,7 +9,8 @@
                 <p>If you will add new contact</p>
             </div>
             <div class="col-md-2">
-                <a href="#" class="btn btn-primary" role="button">Add contact</a>
+                <button id="create-contact" class="btn btn-primary"
+                        type="button" name="button">Create contact</button>
             </div>
         </div>
         <table class="table table-striped">
@@ -43,4 +44,10 @@
         </table>
     {% include "notebook/pagination.html" with page=page_obj %}
     </div>
+    <!-- Modal -->
+    <div class="modal fade" tabindex="-1" role="dialog" id="modal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content"></div>
+  </div>
+</div>
 {% endblock %}

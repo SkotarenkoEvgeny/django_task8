@@ -6,6 +6,7 @@ name = "pypi"
 [packages]
 django = "*"
 randomuser = "*"
+django-bootstrap-modal-forms = "*"
 
 [dev-packages]
 
